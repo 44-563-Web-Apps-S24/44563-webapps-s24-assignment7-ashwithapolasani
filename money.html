@@ -15,6 +15,7 @@
         <p id="score">Score is zero.</p>
         <button onclick="help()">Click for help.</button>
         <p id="help">Help report</p>
+        <button onclick="newgame()">New Game</button> 
             <div class="gamebox">
                 <img id="0" src="building.jpg.jpg" width="150px" height="150px" alt="building" onclick="check(0)">
             </div>
@@ -196,8 +197,22 @@
     
                 document.getElementById("help").innerText = helpText;
             }
-        </script>
+            function newGame() {
+       
+       score = 0;
+       locations = 0;
+       lastLocation = 0;
+       gameOver = false;
+       initializeLocations(); 
 
-        </body>
-        </html>
-            
+     
+       document.getElementById("locations").innerHTML = "Number of locations checked is " + locations;
+       document.getElementById("score").innerHTML = "Score is " + score;
+       document.getElementById("help").innerHTML = "Help report";
+       for (let i = 0; i < ids.length; i++) {
+           document.getElementById(ids[i]).src = "building.jpg";
+       }
+   }
+  </script>
+</body>
+</html>
